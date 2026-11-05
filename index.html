@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ramatoulaye NDIAYE – Réseaux, systèmes et cybersécurité</title>
+<meta name="description" content="Portfolio de Ramatoulaye NDIAYE : projets réseaux, systèmes et cybersécurité, en recherche d'alternance.">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2b2f36;--muted:#5d6572;--paper:#fbfcfd;--card:#fff;--sky:#e4f0fb;--sky-d:#bcdcf7;--accent:#1f4f8f;--line:#d5dde6;--serif:'Newsreader',Georgia,serif;--sans:'Work Sans',system-ui,sans-serif}
+:root[data-theme=dark]{--ink:#e6eaf0;--muted:#a3adbb;--paper:#14181f;--card:#1c222c;--sky:#1a2535;--sky-d:#2d4668;--accent:#8ec1f5;--line:#2c3441}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font:17px/1.65 var(--sans);color:var(--ink);background:var(--paper)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:5}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px}
+header.top strong{font-family:var(--serif);font-size:1.15rem}
+nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:.95rem}
+nav a{text-decoration:none;color:var(--ink);padding:4px 10px;border-radius:6px}
+nav a:hover{background:var(--sky)}
+nav a.on{background:var(--sky);font-weight:600}
+button{font:inherit;cursor:pointer;color:inherit}
+#theme{border:1px solid var(--line);background:transparent;border-radius:6px;padding:4px 10px}
+.hero{background:var(--sky);padding:72px 0 56px}
+.grid{display:grid;grid-template-columns:1fr 200px;gap:40px;align-items:center}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,6vw,3.7rem);line-height:1.05}
+.lead{font-size:1.2rem;margin-top:18px;max-width:34em}
+.status{display:inline-block;margin-top:20px;padding:8px 14px;background:var(--card);border:1px solid var(--sky-d);border-radius:6px;font-weight:500}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{padding:11px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.main{background:var(--accent);color:var(--paper)}
+.photo{width:200px;height:240px;border-radius:100px;object-fit:cover;background:var(--sky-d)}
+.chain{margin-top:40px}
+.chain p{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+.chain ol{list-style:none;padding:0;display:flex;flex-wrap:wrap}
+.chain li{margin:0 18px 8px 0;position:relative}
+.chain li button{background:var(--card);border:1px solid var(--sky-d);padding:8px 14px;font-weight:500;animation:pulse 4s infinite;animation-delay:calc(var(--i)*.8s)}
+.chain li:not(:last-child)::after{content:"";position:absolute;right:-18px;top:50%;width:18px;border-top:2px solid var(--accent)}
+@keyframes pulse{0%,25%,100%{background:var(--card)}10%{background:var(--sky-d)}}
+section{padding:60px 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:600;font-size:2rem;margin-bottom:20px}
+h3{font-size:1.08rem;font-weight:600}
+.muted{color:var(--muted)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 14px;font-size:.92rem}
+.chip[aria-pressed=true]{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+.chip:disabled{opacity:.45;cursor:default}
+#tool-note{min-height:28px;font-size:.92rem;color:var(--muted);margin-bottom:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.card{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s}
+.card:hover{border-color:var(--accent)}
+.card .cat{font-size:.85rem;color:var(--accent);font-weight:600}
+.card p{font-size:.95rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tags span{font-size:.8rem;background:var(--sky);padding:2px 8px;border-radius:4px}
+dialog{max-width:680px;width:calc(100% - 32px);border:1px solid var(--line);border-radius:10px;padding:28px;background:var(--card);color:var(--ink);max-height:88vh}
+dialog::backdrop{background:rgba(10,15,25,.55)}
+dialog ul{padding-left:1.1em;margin:12px 0}
+dialog li{margin-bottom:6px}
+dialog img{max-width:100%;border:1px solid var(--line);border-radius:6px;margin-top:10px}
+#close{float:right;border:1px solid var(--line);background:transparent;border-radius:6px;padding:4px 12px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.skills .tags{margin-top:8px}
+.skills .chip{font-size:.85rem;padding:3px 10px}
+.tl{list-style:none;padding:0;border-left:2px solid var(--sky-d);margin-left:6px}
+.tl li{padding:0 0 20px 20px;position:relative}
+.tl li::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+footer{padding:28px 0;color:var(--muted);font-size:.9rem}
+@media(max-width:720px){.grid,.about{grid-template-columns:1fr}.photo{width:140px;height:168px;border-radius:70px;order:-1}body{font-size:16px}header.top .wrap{flex-direction:column;align-items:flex-start}}
+section.hero{padding:72px 0 56px;border-bottom:0}
+.photo{object-position:center 18%}
+.box{background:var(--card);border:1px solid var(--sky-d);border-radius:8px;padding:18px 20px}
+.box h3{margin-bottom:8px}
+.cover{height:150px;border-radius:6px;overflow:hidden;background:var(--sky);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:600;text-align:center;padding:0;font-size:.95rem}
+.cover img{width:100%;height:100%;object-fit:contain;background:#fff}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <strong>Ramatoulaye NDIAYE</strong>
+  <nav aria-label="Navigation principale">
+    <a href="#apropos">À propos de moi</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a>
+    <button id="theme" aria-label="Changer de thème">Thème</button>
+  </nav>
+</div></header>
+<main>
+<section id="apropos" class="hero"><div class="wrap">
+  <div class="grid">
+    <div>
+      <p class="muted" style="font-weight:600;letter-spacing:.04em">À PROPOS DE MOI</p>
+      <h1>Ramatoulaye NDIAYE</h1>
+      <p class="lead">Étudiante en cybersécurité à l'École Hexagone, titulaire d'un BUT Réseaux et Télécommunications (parcours Cybersécurité). J'aime comprendre comment une infrastructure fonctionne, comment on la surveille et comment on la défend.</p>
+      <span class="status">Je recherche une alternance en réseaux, systèmes et cybersécurité</span>
+      <div class="btns">
+        <a class="btn main" href="./CV_Alternance_2026.pdf" download>Télécharger mon CV</a>
+        <a class="btn" href="#projets">Voir mes projets</a>
+        <a class="btn" href="#contact">Me contacter</a>
+      </div>
+    </div>
+    <img class="photo" src="./images/photo.jpg" alt="Portrait de Ramatoulaye NDIAYE" onerror="this.style.display='none'">
+  </div>
+  <div class="about" style="margin-top:44px">
+    <div class="box"><h3>Ce que je recherche</h3>
+      <ul class="tight">
+        <li><strong>Contrat :</strong> alternance de 12 à 24 mois</li>
+        <li><strong>Rythme :</strong> 3 semaines en entreprise, 1 semaine en formation</li>
+        <li><strong>Domaines :</strong> administration systèmes et réseaux, sécurité des infrastructures, supervision, audit</li>
+        <li><strong>Disponibilité :</strong> immédiate, mobilité nationale</li>
+      </ul></div>
+    <div class="box"><h3>Ce que j'ai déjà fait</h3>
+      <ul class="tight">
+        <li>Deux stages : audit et preuve de concept Teams chez NEXTEAM Group, supervision Centreon chez AOC Télécom</li>
+        <li>Un SIEM Splunk et une solution Keycloak montés en projet</li>
+        <li>Secrétaire générale d'une association (2024 à 2026)</li>
+      </ul></div>
+  </div>
+  <p style="margin-top:20px" class="muted">Langues : français courant, anglais intermédiaire. En dehors des écrans : cuisine sénégalaise, culture et histoire du Sénégal, marche.</p>
+  <div class="chain">
+    <p>Mon projet de supervision de sécurité, de la machine au tableau de bord (cliquer pour le détail) :</p>
+    <ol id="chain"></ol>
+  </div>
+</div></section>
+
+<section id="projets"><div class="wrap">
+  <h2>Projets</h2>
+  <div class="filters" id="cats" role="group" aria-label="Filtrer par domaine"></div>
+  <div id="tool-note" aria-live="polite"></div>
+  <div class="cards" id="cards"></div>
+</div></section>
+
+<section id="competences"><div class="wrap">
+  <h2>Compétences</h2>
+  <p class="muted">Clique sur un outil pour afficher les projets où je l'ai utilisé.</p>
+  <div class="skills" id="skills" style="margin-top:20px"></div>
+</div></section>
+
+<section id="parcours"><div class="wrap">
+  <h2>Parcours</h2>
+  <ol class="tl">
+    <li><h3>Mastère Cybersécurité / Cyberdéfense, École Hexagone</h3><span class="muted">Clermont-Ferrand, depuis septembre 2026, en alternance</span></li>
+    <li><h3>Technicienne Réseaux et Télécom, NEXTEAM Group</h3><span class="muted">Stage, février à juin 2026</span></li>
+    <li><h3>BUT Réseaux et Télécommunications, parcours Cybersécurité</h3><span class="muted">IUT Clermont Auvergne, 2022 à 2026</span></li>
+    <li><h3>Technicienne Réseaux, AOC Télécom</h3><span class="muted">Stage, avril à juin 2024</span></li>
+    <li><h3>Secrétaire générale, Association Sénégalaise de Clermont-Ferrand</h3><span class="muted">2024 à 2026, organisation d'événements, coordination des équipes, communication interne</span></li>
+  </ol>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <p>Disponible immédiatement, mobilité nationale.</p>
+  <p style="margin-top:12px"><a href="mailto:ramatand1809@gmail.com">ramatand1809@gmail.com</a><br>
+  <a href="tel:+33619353901">06 19 35 39 01</a><br>
+  <a href="https://www.linkedin.com/in/ramatoulaye-ndiaye-430549283">LinkedIn</a></p>
+</div></section>
+</main>
+<footer><div class="wrap">Ramatoulaye NDIAYE, 2026</div></footer>
+
+<dialog id="dlg" aria-labelledby="dt"><button id="close">Fermer</button><div id="dbody"></div></dialog>
+
+<script>
+const P=[
+{id:'siem',c:'Sécurité',t:'Collecte de logs et SIEM Splunk',s:'Centraliser les logs Windows et Linux pour les analyser dans Splunk.',x:'Projet de BUT R&T, administration systèmes et supervision',d:['Infrastructure Active Directory et GPO pour collecter les logs Windows avec Windows Event Forwarding (WinRM / WECSvc).','Centralisation des logs Linux avec rsyslog, avec remontée ciblée des logs Apache.','Journalisation avancée avec Sysmon, puis intégration Windows et Linux dans Splunk via Universal Forwarder.'],k:['Active Directory','GPO','Sysmon','Splunk','rsyslog'],img:['siem.svg']},
+{id:'keycloak',c:'Sécurité',t:'Gestion des identités avec Keycloak',s:'Centraliser les accès et protéger les connexions.',x:'Projet de BUT R&T, sécurité des identités',d:['Déploiement et configuration de Keycloak.','Gestion des utilisateurs et de leurs droits selon les rôles.','Mise en place de l\'authentification multifacteur.','Analyse des vulnérabilités liées aux sessions et aux jetons d\'authentification.'],k:['Keycloak','MFA'],img:['keycloak.svg']},
+{id:'pentest',c:'Sécurité',t:'Tests d\'intrusion (SAE34)',s:'Accès administrateur sur plusieurs machines vulnérables.',x:'Projet de BUT R&T, pentesting',d:['Tests sur les machines Blue, Academy, Dev, Butler et Black Pearl depuis une VM Kali, jusqu\'à l\'accès administrateur / root.','Travail sur la reconnaissance, l\'analyse de vulnérabilités et la gestion des droits d\'accès.'],k:['Kali Linux'],img:['pentest.svg','root.jpg']},
+{id:'ebios',c:'Sécurité',t:'Analyse de risque EBIOS RM',s:'Identifier et prioriser les menaces sur les actifs d\'une organisation.',x:'AOC Télécom',d:['Identification des événements redoutés, évaluation des vulnérabilités et des impacts.','Scénarios stratégiques et opérationnels, mesures de sécurité adaptées.','Objectif : ramener les risques à un niveau acceptable en protégeant confidentialité, intégrité et disponibilité.'],k:['EBIOS RM'],img:['ebios.svg']},
+{id:'sae41',c:'Réseaux',t:'Infrastructure sécurisée pour deux entreprises (SAE41)',s:'Pare-feu, DMZ et services réseaux séparés par entreprise.',x:'Projet de BUT R&T, infrastructure de sécurité',d:['Reconstruction d\'un réseau sécurisé pour deux entreprises avec des machines virtuelles sur Rundeck.','Configuration des pare-feu et des services DNS, Web, FTP et Mail de chaque entreprise.','Segmentation du réseau et DMZ, avec une passerelle commune vers Internet.'],k:['Pare-feu','DMZ','DNS','Rundeck'],img:['sae41.svg']},
+{id:'sae33',c:'Réseaux',t:'Routage BGP et OSPF (SAE33)',s:'Échanger des routes entre systèmes autonomes.',x:'Projet de BUT R&T, réseaux multiples',d:['Configuration de BGP entre plusieurs systèmes autonomes.','OSPF pour le routage interne d\'un système autonome.','Tests de connectivité et adaptation de la topologie dans un réseau simulé.'],k:['BGP','OSPF'],img:['sae33.svg']},
+{id:'supervision',c:'Réseaux',t:'Supervision Telegraf, InfluxDB et Grafana',s:'De la collecte des métriques au tableau de bord.',x:'TP de BUT R&T',d:['Telegraf pour collecter les métriques système, InfluxDB pour les stocker.','Grafana pour les visualiser en temps réel dans des tableaux de bord.'],k:['Telegraf','InfluxDB','Grafana'],img:['supervision.svg']},
+{id:'stream',c:'Réseaux',t:'Streaming télévisuel en multicast',s:'Diffuser des flux vidéo sur le réseau local avec VLC.',x:'Projet de BUT R&T',d:['Serveur de streaming en UDP et en multicast, client VLC en RTSP.','Chaîne de réception : antenne, câbles coaxiaux, décodeurs et commutateurs.'],k:['VLC','Multicast','UDP','RTSP'],img:['stream.svg']},
+{id:'nexteam',c:'Stages',t:'NEXTEAM Group : audit et preuve de concept Teams',s:'Un procédé d\'audit commun pour 18 filiales.',x:'Stage, février à juin 2026, Olemps',d:['Conception d\'un procédé d\'audit standardisé pour 18 filiales.','Audit de l\'infrastructure téléphonique et identification des besoins de modernisation.','Cahier des charges transmis aux prestataires, puis preuve de concept de la solution Microsoft Teams.'],k:['Microsoft Teams','Audit','ToIP'],img:['nexteam.svg']},
+{id:'aoc',c:'Stages',t:'AOC Télécom : supervision réseau avec Centreon',s:'Suivi de la disponibilité des services et alertes.',x:'Stage, avril à juin 2024, Clermont-Ferrand',d:['Supervision des infrastructures réseau avec Centreon.','Analyse des performances et identification des anomalies.','Alertes de détection d\'incidents et documentation d\'exploitation.'],k:['Centreon'],img:['aoc.svg']},
+{id:'ps',c:'Systèmes',t:'Automatisation avec PowerShell',s:'Scripts pour administrer Active Directory et les serveurs.',x:'Projet d\'administration système',d:['Ajout, suppression et gestion des permissions des utilisateurs Active Directory.','Configuration des services système et mise à jour de configurations réseau.'],k:['PowerShell','Active Directory'],img:['ps.svg']},
+{id:'virt',c:'Systèmes',t:'Virtualisation et gestion de serveurs',s:'Environnements réseau complets avec VMware et VirtualBox.',x:'TP de BUT R&T',d:['Création et gestion de plusieurs machines virtuelles Linux et Windows.','Gestion des ressources allouées (CPU, mémoire, stockage) et utilisation des instantanés avant les modifications importantes.'],k:['VMware','VirtualBox'],img:['virt.svg']},
+{id:'android',c:'Systèmes',t:'Alternatives à Android et iOS',s:'LineageOS et postmarketOS sur un OnePlus 6.',x:'Projet personnel',d:['Installation de LineageOS et de postmarketOS (basé sur Alpine Linux) sur un smartphone.','Objectif : conserver appels, SMS et accès Internet avec des systèmes ouverts et plus respectueux de la vie privée.'],k:['LineageOS','postmarketOS'],img:['android.svg','android.jpg']},
+{id:'dev',c:'Développement',t:'Applications Java, PHP et Python',s:'Gestion de stocks, back-end web et calculatrice.',x:'Projets de BUT R&T',d:['Java : application de gestion de stocks en programmation orientée objet, avec base de données.','PHP : fonctionnalités back-end avec connexion à MySQL.','Python : calculatrice.'],k:['Java','PHP','MySQL','Python'],img:['dev.svg']},
+{id:'sae32',c:'Développement',t:'Application de messagerie (SAE32)',s:'Échanger des messages entre adresses IP avec des sockets.',x:'Projet de BUT R&T',d:['Application avec interface graphique pour envoyer et recevoir des messages via des adresses IP.','Communication bidirectionnelle avec des sockets.'],k:['Sockets'],img:['sae32.svg']},
+{id:'sae31',c:'Télécoms',t:'Modulations ASK, FSK et PSK (SAE31)',s:'Simuler le codage et la modulation d\'un signal.',x:'Projet de BUT R&T',d:['Codage binaire en NRZ et modulation d\'une porteuse.','Représentation du chronogramme du signal modulé.'],k:['Modulation'],img:['sae31.svg']},
+{id:'asterisk',c:'Télécoms',t:'Architecture de téléphonie VoIP avec Asterisk',s:'Serveur d\'entreprise, trunk SIP vers un opérateur émulé et pare-feu.',x:'Travaux pratiques de BUT 3, réalisés en trinôme',d:['Serveur Asterisk d\'entreprise avec trois usagers SIP : deux téléphones Cisco / Linksys et un softphone X-Lite.','Plan de numérotation, messagerie vocale (dépôt après 10 secondes, consultation au 999), renvoi d\'appel sur non-réponse et conférence.','Second serveur Asterisk émulant un opérateur (ITSP) : numérotation à 10 chiffres, abonné particulier, trunk SIP avec authentification et numéro SDA.','Analyse avec Wireshark des échanges SIP (REGISTER, 401, 403, INVITE), des codecs négociés en SDP et des flux RTP.','Pare-feu iptables entre les deux serveurs : les appels sonnaient mais sans voix, jusqu\'à l\'ouverture des ports RTP (10000 à 20000).'],k:['Asterisk','SIP','RTP','Wireshark','iptables'],img:['asterisk.svg','asterisk-appel.svg']}
+];
+const SK={'Sécurité':['Splunk','Sysmon','Keycloak','MFA','Stormshield','Kali Linux','EBIOS RM'],'Réseaux':['BGP','OSPF','Pare-feu','DMZ','DNS','Centreon','Grafana','Telegraf','InfluxDB','Wireshark','iptables'],'Téléphonie':['Asterisk','SIP','RTP','Microsoft Teams','ToIP'],'Systèmes':['Active Directory','GPO','PowerShell','VMware','VirtualBox','rsyslog'],'Développement':['Python','Java','PHP','MySQL','Sockets']};
+let cat='Tous',tool=null;
+const $=s=>document.querySelector(s),mk=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!==undefined)e.textContent=h;return e};
+function openP(id){const p=P.find(x=>x.id===id),b=$('#dbody');b.replaceChildren();
+ const t=mk('h3','',p.t);t.id='dt';t.style.fontSize='1.35rem';b.append(t,mk('p','muted',p.x));
+ const u=mk('ul');p.d.forEach(i=>u.append(mk('li','',i)));b.append(u);
+ const g=mk('div','tags');p.k.forEach(k=>g.append(mk('span','',k)));b.append(g);
+ (p.img||[]).forEach(f=>{const a=mk('a'),i=mk('img');a.href=i.src=encodeURI('./images/'+f);a.target='_blank';a.rel='noopener';i.alt='Capture du projet : '+p.t;i.loading='lazy';a.onerror=i.onerror=()=>a.remove();a.append(i);b.append(a)});
+ $('#dlg').showModal()}
+function render(){const c=$('#cards');c.replaceChildren();
+ P.filter(p=>(cat==='Tous'||p.c===cat)&&(!tool||p.k.includes(tool))).forEach(p=>{
+  const b=mk('button','card'),cv=mk('div','cover'),tx=p.k.slice(0,2).join(' · ');if(p.img){const i=mk('img');i.src='./images/'+p.img[0];i.alt='';i.loading='lazy';i.onerror=()=>{i.remove();cv.textContent=tx};cv.append(i)}else cv.textContent=tx;b.append(cv,mk('span','cat',p.c),mk('h3','',p.t),mk('p','',p.s));
+  const g=mk('div','tags');p.k.slice(0,4).forEach(k=>g.append(mk('span','',k)));b.append(g);
+  b.onclick=()=>openP(p.id);c.append(b)});
+ document.querySelectorAll('#cats .chip').forEach(b=>b.setAttribute('aria-pressed',b.textContent===cat));
+ const n=$('#tool-note');n.replaceChildren();
+ if(tool){n.append('Projets utilisant ',mk('strong','',tool),' : ');const r=mk('button','chip','Tout afficher');r.onclick=()=>{tool=null;render()};n.append(r)}}
+['Tous',...new Set(P.map(p=>p.c))].forEach(k=>{const b=mk('button','chip',k);b.onclick=()=>{cat=k;render()};$('#cats').append(b)});
+Object.entries(SK).forEach(([g,l])=>{const d=mk('div');d.append(mk('h3','',g));const t=mk('div','tags');
+ l.forEach(k=>{const b=mk('button','chip',k);if(!P.some(p=>p.k.includes(k)))b.disabled=true;
+  b.onclick=()=>{tool=k;cat='Tous';render();$('#projets').scrollIntoView()};t.append(b)});d.append(t);$('#skills').append(d)});
+['Active Directory + GPO','Windows Event Forwarding','Sysmon','Splunk'].forEach((k,i)=>{const li=mk('li'),b=mk('button','',k);b.style.setProperty('--i',i);b.onclick=()=>openP('siem');li.append(b);$('#chain').append(li)});
+$('#close').onclick=()=>$('#dlg').close();
+$('#dlg').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
+const root=document.documentElement;let th;try{th=localStorage.getItem('theme')}catch(e){}
+root.dataset.theme=th||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+$('#theme').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}};
+const links=[...document.querySelectorAll('nav a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('main section').forEach(s=>io.observe(s));
+render();
+</script>
+</body>
+</html>
